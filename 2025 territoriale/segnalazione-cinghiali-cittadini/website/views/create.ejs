@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Segnalazione cinghiali cittadini</title>
+		<script src="
+https://cdn.jsdelivr.net/npm/bootstrap-italia@2.13.4/dist/js/bootstrap-italia.min.js
+"></script>
+		<link
+			href="
+https://cdn.jsdelivr.net/npm/bootstrap-italia@2.13.4/dist/css/bootstrap-italia.min.css
+"
+			rel="stylesheet" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+			rel="stylesheet" />
+	</head>
+	<body>
+		<div class="it-header-slim-wrapper">
+			<div class="container-xxl">
+				<div class="row">
+					<div class="col-12">
+						<div class="it-header-slim-wrapper-content">
+							<a class="d-lg-block navbar-brand" href="/">Segnalazione cinghiali cittadini</a>
+							<div class="it-header-slim-right-zone">
+								<div class="nav-item dropdown">
+									<a
+										class="nav-link dropdown-toggle"
+										href="#"
+										role="button"
+										data-bs-toggle="dropdown"
+										aria-expanded="false">
+										<span class="visually-hidden">Selezione lingua: lingua selezionata</span>
+										<span>ITA</span>
+										<svg class="icon d-none d-lg-block">
+											<use href="/sprites.svg#it-expand"></use>
+										</svg>
+									</a>
+									<div class="dropdown-menu">
+										<div class="row">
+											<div class="col-12">
+												<div class="link-list-wrapper">
+													<ul class="link-list">
+														<li>
+															<a class="dropdown-item list-item" href="#"
+																><span
+																	>ITA
+																	<span class="visually-hidden"
+																		>selezionata</span
+																	></span
+																></a
+															>
+														</li>
+														<li>
+															<a class="dropdown-item list-item" href="#"
+																><span>ENG</span></a
+															>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<% if (!!username) { %>
+								<a href="#" class="btn btn-primary btn-icon btn-full">
+									<span class="rounded-icon">
+										<svg class="icon icon-primary">
+											<use href="/sprites.svg#it-user"></use>
+										</svg>
+									</span>
+									<span class="d-none d-lg-block"><strong>Bentornato</strong> <%- username %></span>
+								</a>
+								<% } else { %>
+								<form action="/register" method="POST">
+									<button class="btn btn-primary btn-icon btn-full">
+										<span class="rounded-icon">
+											<svg class="icon icon-primary">
+												<use href="/sprites.svg#it-user"></use>
+											</svg>
+										</span>
+										<span class="d-none d-lg-block">Accedi all'area personale</span>
+									</button>
+								</form>
+								<% } %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container mt-5">
+			<h1>Nuova segnalazione</h1>
+
+			<form class="needs-validation mt-5" method="POST">
+				<div class="row">
+					<div class="form-group col">
+						<label class="active" for="inputAddress">Indirizzo</label>
+						<input
+							type="text"
+							class="form-control"
+							id="inputAddress"
+							placeholder="Via Roma, 1"
+							required
+							name="address"
+							aria-describedby="addressDescription" />
+						<small id="addressDescription" class="form-text">Dove hai visto il cinghiale?</small>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col">
+						<label class="active" for="inputImage">Immagine</label>
+						<input
+							type="url"
+							class="form-control"
+							id="inputImage"
+							placeholder="https://example.com"
+							name="image"
+							aria-describedby="urlDescription" />
+						<small id="urlDescription" class="form-text"
+							>Facoltativo, se vuoi allegarci una foto del cinghiale</small
+						>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col">
+						<label class="active" for="inputPOW">Proof of work</label>
+						<input
+							type="text"
+							class="form-control"
+							id="inputPOW"
+							name="pow"
+							placeholder="Proof of work"
+							aria-describedby="powDescription" />
+						<small id="powDescription" class="form-text"
+							>Per calcolare la proof of work, puoi eseguire il seguente comando:
+							<code>hashcash -mCb26 "<%- pow %>"</code>, oppure puoi
+							<a target="_blank" href="https://pow.cybersecnatlab.it/?data=<%- pow %>&bits=26"
+								>usare il tool online</a
+							></small
+						>
+					</div>
+				</div>
+
+				<div class="row justify-content-center">
+					<div>
+						<button class="btn btn-primary" type="submit">Invia</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

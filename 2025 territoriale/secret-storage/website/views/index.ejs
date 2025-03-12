@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="row mt-2">
+				<div class="col text-end text-muted">Username: <%= username %></div>
+			</div>
+		</div>
+		<div class="container mt-5">
+			<div class="row">
+				<div class="col col-12 col-lg-8 offset-lg-2">
+					<h1 class="text-center">Your data</h1>
+
+					<div class="row">
+						<div class="col-8 offset-2">
+							<div class="text-center">
+								<select class="form-select" aria-label="Order by" id="orderingSelect">
+									<option selected disabled>Order by</option>
+									<option value="name">Name</option>
+									<option value="created_at asc">Oldest to newest</option>
+									<option value="created_at desc">Newest to oldest</option>
+								</select>
+
+								<script>
+									orderingSelect.onchange = (e) => {
+										location.href = '/?order=' + encodeURIComponent(e.target.value);
+									};
+								</script>
+							</div>
+						</div>
+					</div>
+
+					<form class="row g-3 align-items-center mt-5" method="POST">
+						<div class="col-5">
+							<label class="visually-hidden" for="inlineFormName">Name</label>
+							<div class="input-group">
+								<input
+									type="text"
+									class="form-control"
+									name="name"
+									id="inlineFormName"
+									placeholder="Name"
+									required />
+							</div>
+						</div>
+
+						<div class="col-5">
+							<label class="visually-hidden" for="inlineFormSecret">Secret</label>
+							<div class="input-group">
+								<input
+									type="text"
+									class="form-control"
+									name="secret"
+									id="inlineFormSecret"
+									placeholder="Secret"
+									required />
+							</div>
+						</div>
+
+						<div class="col-2">
+							<button type="submit" class="btn btn-success w-100">Create new</button>
+						</div>
+					</form>
+
+					<table class="text-nowrap table table-striped table-bordered table-hover mt-4">
+						<thead>
+							<tr>
+								<th class="align-middle">Name</th>
+								<th class="align-middle">Created</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% user_entries.forEach((entry) => { %>
+							<tr>
+								<td class="align-middle"><%= entry.name %></td>
+								<td class="align-middle"><%= entry.created_at %></td>
+							</tr>
+							<% }) %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"></script>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+services:
+  db:
+    image: mariadb:11.7
+    environment:
+      MARIADB_USER: mariadb
+      MARIADB_PASSWORD: supersecret
+      MARIADB_DATABASE: mariadb
+      MARIADB_RANDOM_ROOT_PASSWORD: yes
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+  service:
+    build: website
+    environment:
+      FLAG: flag{REDACTED}
+      DB_HOST: db
+      DB_NAME: mariadb
+      DB_USER: mariadb
+      DB_PASSWORD: supersecret
+    ports:
+      - 3000:3000

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Gabibbogram gallery</h1>
+<a href="/upload">Upload More Images</a>
+<div class="gallery" id="gallery">
+    {% for image in images %}
+        <img class="gallery-item" src-noload="{{ url_for('image') }}?filename={{ image }}" alt="Uploaded Image">
+    {% endfor %}
+</div>
+
+<div class="pagination-controls">
+    <button id="prevPage">Prev</button>
+    <span id="pageInfo">Page 1</span>
+    <button id="nextPage">Next</button>
+</div>
+
+<script>
+	// pagination logic
+    document.addEventListener("DOMContentLoaded", function() {
+        const itemsPerPage = 12;
+        let currentPage = 1;
+        const images = document.querySelectorAll(".gallery-item");
+        const totalPages = Math.ceil(images.length / itemsPerPage);
+        const pageInfo = document.getElementById("pageInfo");
+        const prevPageBtn = document.getElementById("prevPage");
+        const nextPageBtn = document.getElementById("nextPage");
+
+        function showPage(page) {
+            images.forEach((img, index) => {
+                if (index >= (page - 1) * itemsPerPage && index < page * itemsPerPage) {
+                    img.style.display = "block";
+                    img.src = img.getAttribute("src-noload");
+                } else {
+                    img.style.display = "none";
+                }
+            });
+            pageInfo.textContent = `Page ${page}`;
+            prevPageBtn.disabled = (page === 1);
+            nextPageBtn.disabled = (page === totalPages);
+        }
+
+        prevPageBtn.addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        });
+
+        nextPageBtn.addEventListener("click", () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        });
+
+        showPage(currentPage);
+    });
+</script>
+{% endblock %}

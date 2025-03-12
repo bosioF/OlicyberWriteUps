@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Segnalazione cinghiali cittadini</title>
+		<script src="
+https://cdn.jsdelivr.net/npm/bootstrap-italia@2.13.4/dist/js/bootstrap-italia.min.js
+"></script>
+		<link
+			href="
+https://cdn.jsdelivr.net/npm/bootstrap-italia@2.13.4/dist/css/bootstrap-italia.min.css
+"
+			rel="stylesheet" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+			rel="stylesheet" />
+	</head>
+	<body>
+		<div class="it-header-slim-wrapper">
+			<div class="container-xxl">
+				<div class="row">
+					<div class="col-12">
+						<div class="it-header-slim-wrapper-content">
+							<a class="d-lg-block navbar-brand" href="/">Segnalazione cinghiali cittadini</a>
+							<div class="it-header-slim-right-zone">
+								<div class="nav-item dropdown">
+									<a
+										class="nav-link dropdown-toggle"
+										href="#"
+										role="button"
+										data-bs-toggle="dropdown"
+										aria-expanded="false">
+										<span class="visually-hidden">Selezione lingua: lingua selezionata</span>
+										<span>ITA</span>
+										<svg class="icon d-none d-lg-block">
+											<use href="/sprites.svg#it-expand"></use>
+										</svg>
+									</a>
+									<div class="dropdown-menu">
+										<div class="row">
+											<div class="col-12">
+												<div class="link-list-wrapper">
+													<ul class="link-list">
+														<li>
+															<a class="dropdown-item list-item" href="#"
+																><span
+																	>ITA
+																	<span class="visually-hidden"
+																		>selezionata</span
+																	></span
+																></a
+															>
+														</li>
+														<li>
+															<a class="dropdown-item list-item" href="#"
+																><span>ENG</span></a
+															>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<% if (!!username) { %>
+								<a href="#" class="btn btn-primary btn-icon btn-full">
+									<span class="rounded-icon">
+										<svg class="icon icon-primary">
+											<use href="/sprites.svg#it-user"></use>
+										</svg>
+									</span>
+									<span class="d-none d-lg-block"><strong>Bentornato</strong> <%- username %></span>
+								</a>
+								<% } else { %>
+								<form action="/register" method="POST">
+									<button class="btn btn-primary btn-icon btn-full">
+										<span class="rounded-icon">
+											<svg class="icon icon-primary">
+												<use href="/sprites.svg#it-user"></use>
+											</svg>
+										</span>
+										<span class="d-none d-lg-block">Accedi all'area personale</span>
+									</button>
+								</form>
+								<% } %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<section class="it-hero-wrapper it-text-centered">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="it-hero-text-wrapper bg-dark">
+							<span class="it-category">ti diamo il benvenuto sulla piattaforma di</span>
+							<h2>Segnalazione cinghiali cittadini</h2>
+							<p class="d-none d-lg-block">
+								Stanco che i cinghiali ti rubino la pizza in spiaggia? Stanco di andare a buttare la
+								rumenta e trovare un cinghiale nel cassonetto?
+							</p>
+							<p class="d-none d-lg-block">
+								Finalmente hai a disposizione una piattaforma nella quale segnalare tutti i cinghiali
+								che incontri!
+							</p>
+
+							<p class="d-none d-lg-block">
+								<small>
+									Disclaimer: Non promettiamo di prendere in carico le segnalazioni ricevute
+								</small>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="container mt-5">
+			<% if (!username) { %>
+			<div class="alert alert-danger" role="alert">Per poter gestire le tue segnalazioni, devi registrarti</div>
+			<% } else { %>
+
+			<h1>
+				Le tue segnalazioni
+				<a href="/create" class="ms-3"
+					><button type="button" class="btn btn-outline-primary btn-icon">
+						<svg class="icon icon-primary me-2">
+							<use href="/sprites.svg#it-plus"></use></svg
+						>Nuova segnalazione
+					</button></a
+				>
+			</h1>
+
+			<% if (reports.length === 0) { %>
+			<div class="alert alert-warning" role="alert">Non hai ancora creato nessuna segnalazione</div>
+			<% } else { %>
+			<div class="it-list-wrapper">
+				<ul class="it-list">
+					<li>
+						<div class="list-item">
+							<div class="it-right-zone">
+								<span class="text">Segnalazione</span>
+							</div>
+						</div>
+					</li>
+					<% reports.forEach((report) => { %>
+					<li>
+						<div class="list-item">
+							<div class="it-right-zone">
+								<a href="/report/<%- report.id %>">
+									<span class="text"><%- report.address %></span>
+								</a>
+							</div>
+						</div>
+					</li>
+					<% }) %>
+				</ul>
+			</div>
+			<% } %> <% } %>
+		</div>
+	</body>
+</html>
