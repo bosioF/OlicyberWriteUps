@@ -1,8 +1,0 @@
-services:
-  monty_hall_backend:
-    build: .
-    restart: unless-stopped
-    environment:
-      FLAG: flag{redacted_%s}
-    ports:
-      - '5000:5000'
