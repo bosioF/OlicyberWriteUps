@@ -1,4 +1,4 @@
-import requests, json # girando per il sito si nota che c'è una api...
+import requests, json
 site = "http://easynotes.challs.olicyber.it/"
 s = requests.Session()
 s.get(site)
