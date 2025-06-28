@@ -4,12 +4,12 @@ import sys
 
 """
 data = {}
-    while len(data) < pow(16,6):
-        rnd = os.urandom(8)
-        k = sha256(rnd).hexdigest()
-        data[k[:6]] = rnd.hex()
-    file = open("precalc.json","w")
-    file.write(json.dumps(data))
+while len(data) < pow(16,6):
+    rnd = os.urandom(8)
+    k = sha256(rnd).hexdigest()
+    data[k[:6]] = rnd.hex()
+file = open("precalc.json","w")
+file.write(json.dumps(data))
 """
 
 file = open("precalc.json","r").read()
