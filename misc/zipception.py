@@ -1,23 +1,3 @@
-"""import zipfile
-import os
-
-counter1 = 3000
-
-first_zip_file_path = '/home/bosio/Downloads/flag3000.zip'
-extraction_path = f'/home/bosio/Downloads/flag{counter1}'
-
-counter = 0
-
-while counter < 3001:
-    if counter == 0:
-        with zipfile.ZipFile(first_zip_file_path, 'r') as zip_ref:
-            zip_ref.extractall(extraction_path)
-    else:
-        with zipfile.ZipFile(f'/home/bosio/Downloads/flag3000/flag{counter1- 1}.zip', 'r') as zip_ref:
-            zip_ref.extractall(extraction_path)
-    counter += 1
-"""
-
 import subprocess
 
 contatore = 3000
