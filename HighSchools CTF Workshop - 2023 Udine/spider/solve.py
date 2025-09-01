@@ -12,7 +12,7 @@ part2 = fetch_flag_part(url2)
 
 if part1 and part2:
     part1_cleaned = part1.split('\n')[0] 
-    full_flag = part1_cleaned + part2 
-    print(f"flag: {full_flag}")
+    full_flag = part1_cleaned + part2
+    print(full_flag)
 else:
     print("error")

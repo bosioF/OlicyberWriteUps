@@ -9,5 +9,4 @@ risultato_bytes = bytes([testo_bytes[i] ^ chiave_bytes[i % len(chiave_bytes)] fo
 risultato_ascii = risultato_bytes.decode(errors="replace")
 risultato_hex = risultato_bytes.hex()
 
-print("Risultato ASCII:", risultato_ascii)
-print("Risultato Hex:", risultato_hex)
+print(risultato_ascii)

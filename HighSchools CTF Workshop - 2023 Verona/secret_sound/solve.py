@@ -21,5 +21,5 @@ for num in numbers:
         result.append(chr(64 + position))
 
 decoded_message = "".join(result)
-print(f"Decoded Message: flag{{{decoded_message}}}")
+print(f"flag{{{decoded_message}}}")
 
