@@ -1,71 +1,25 @@
-# Web Spidering Challenge – Writeup
+# Spider - Writeup
 
-## Challenge Description
-We are tasked with retrieving a flag that is split across two different files hosted on a challenge server. The files are hidden inside different folders, and the goal is to combine their contents to reconstruct the complete flag.
+Riuscirai a trovare i miei segreti?
 
-## Exploit
-```python
-import requests
+La flag è divisa in due parti, dovrai trovarle entrambe e concatenarle per ottenere la flag.
 
-url1 = 'http://spider.challs.olicyber.it/supe3s3cretf0lder/flag1.txt'
-url2 = 'http://spider.challs.olicyber.it/standardNonSecretFolder/flag2.txt'
+Site: [http://spider.challs.cyberhighschools.it](http://spider.challs.cyberhighschools.it)
 
-def fetch_flag_part(url):
-        response = requests.get(url, timeout=5)
-        return response.text.strip()
+### Solution
 
-part1 = fetch_flag_part(url1) 
-part2 = fetch_flag_part(url2) 
+The site consists of a static page with no apparent vulnerabilities, but it contains the following hint:
 
-if part1 and part2:
-    part1_cleaned = part1.split('\n')[0] 
-    full_flag = part1_cleaned + part2
-    print(full_flag)
-else:
-    print("error")
-````
+> Think like a [spider](https://en.wikipedia.org/wiki/Web_crawler)
 
-## Code Analysis
+This suggests that the two parts of the flag are located in paths that a web crawler (spider) would typically discover.
 
-1. **Libraries**
-   The script uses the `requests` library to send HTTP GET requests.
+Specifically:
 
-2. **Target URLs**
-   Two URLs are provided:
+- The [robots.txt](https://en.wikipedia.org/wiki/Robots_exclusion_standard) file reveals the existence of `supe3s3cretf0lder/flag1.txt`, which contains the first part.  
+- The [sitemap.xml](https://en.wikipedia.org/wiki/Sitemaps) file points to the second part at `standardNonSecretFolder/flag2.txt`.
 
-   * `url1` points to `flag1.txt` inside `supe3s3cretf0lder`.
-   * `url2` points to `flag2.txt` inside `standardNonSecretFolder`.
-
-3. **Fetching Function**
-   The `fetch_flag_part` function:
-
-   * Sends a GET request to the given URL.
-   * Returns the response text with whitespace removed using `.strip()`.
-
-4. **Flag Reconstruction**
-
-   * The script downloads both parts of the flag.
-   * `part1_cleaned = part1.split('\n')[0]` ensures only the first line of `flag1.txt` is used (in case of extra whitespace/newlines).
-   * Concatenates `part1_cleaned + part2` to rebuild the full flag.
-
-5. **Output**
-   If both parts are successfully retrieved, the complete flag is printed. Otherwise, it prints `"error"`.
-
-## Exploitation Steps
-
-1. Access the hidden folders on the challenge server.
-2. Retrieve both `flag1.txt` and `flag2.txt`.
-3. Clean and concatenate them.
-4. Print the resulting flag.
-
-## Solution
-
-Running the script successfully fetches the two parts of the flag and reconstructs the final result:
-
+Concatenating both parts of the flag gives:  
 ```
 flag{s3mbr1_un0_sp1d3R}
 ```
-
-## Key Takeaway
-
-This challenge tests **basic web enumeration and file retrieval**. By exploring non-standard folders and combining information, we reconstruct the hidden flag.
