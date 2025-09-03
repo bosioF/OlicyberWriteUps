@@ -1,4 +1,4 @@
-# ITASEC23 - CTF Workshop
+# ITASEC23 - CTF Workshop Bari
 
 ## X0rland1a 
 

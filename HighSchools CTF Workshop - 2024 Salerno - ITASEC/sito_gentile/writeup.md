@@ -1,4 +1,4 @@
-# ITASEC24 - CTF Workshop
+# ITASEC24 - CTF Workshop Salerno
 
 ## Sito Gentile
 
@@ -6,6 +6,7 @@ Dove la gentilezza diventa un'abitudine quotidiana e un'ispirazione per un mondo
 
 Sito: [http://sitogentile.challs.olicyber.it](http://sitogentile.challs.olicyber.it)
 
+---
 ## Solve
 
 When the request is made to `/talk`, the server responds with the message, but also includes the flag in the headers.

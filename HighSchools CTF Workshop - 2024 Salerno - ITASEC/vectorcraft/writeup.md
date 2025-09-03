@@ -1,4 +1,4 @@
-# ITASEC24 - CTF Workshop
+# ITASEC24 - CTF Workshop Salerno
 
 ## VectorCraft
 
@@ -6,6 +6,7 @@ Benvenuto su VectorCraft: il tuo portale di riferimento per grafiche vettoriali 
 
 Sito: [http://vectorcraft.challs.olicyber.it](http://vectorcraft.challs.olicyber.it)
 
+---
 ## Solve
 
 The flag is contained within the `logo.svg` file (accessible
