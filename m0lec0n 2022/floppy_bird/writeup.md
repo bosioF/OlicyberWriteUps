@@ -1,6 +1,11 @@
 # Floppy Bird – Writeup
 
 ## Challenge Description
+```
+I have recreated one of the most classic games in the browser, can you score 1000 points and get the flag?
+
+Website: http://floppybird.challs.olicyber.it
+```
 In this challenge, the flag is awarded after reaching a certain score in the game. Instead of playing manually, we can exploit the server’s API to submit arbitrary scores until the flag is revealed.
 
 ## Exploit
