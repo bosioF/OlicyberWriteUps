@@ -2,6 +2,7 @@
 
 ## FrittoMisto 1 - Writeup
 
+
 ## Challenge description
 ```
 Il Gabibbo ha contattato diversi sviluppatori per sistemare il design del suo sito, tuttavia sembra si sia dimenticato di invitarci, riesci a farci qualcosa?
@@ -78,7 +79,7 @@ if flag:
     print(flag[0])
 ```
 ---
-## Solution
+## Flag
 
 By running the exploit we can retrieve the flag.
 ```
