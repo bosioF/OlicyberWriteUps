@@ -52,7 +52,7 @@ for i in range(1001):
 3. Check the server’s response for the `"flag"` field.
 4. Stop when the flag is received and print it.
 
-## Solution
+## Flag
 
 Running the exploit successfully retrieves the flag from the server’s response:
 
