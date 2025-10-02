@@ -1,5 +1,7 @@
 from pwn import *
-file = ELF("./sw-19")
+import re
+
+file = ELF("Intro-Olicyber\software\sw-19")
 r = remote("software-19.challs.olicyber.it", 13002)
 
 r.recvuntil(b" ...")
@@ -10,4 +12,8 @@ for i in range(20):
     target = r.recvuntil(b": ").decode().replace(": ", "")
     r.sendline(hex(int(file.sym[target])).encode())
 
-print(r.recvall().decode())
+text = r.recvall().decode()
+
+match = re.search(r"flag\{[^\}]+\}", text, re.IGNORECASE)
+if match:
+    print("[!] FLAG TROVATA:", match.group(0))

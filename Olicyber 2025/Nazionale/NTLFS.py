@@ -28,5 +28,4 @@ if 'Location' in buy.headers:
 
     match = re.search(r"flag\{[^\}]+\}", add.text, re.IGNORECASE)
     if match:
-        print("[!] FLAG TROVATA:")
-        print(match.group(0))
+        print("[!] FLAG TROVATA:", match.group(0))
