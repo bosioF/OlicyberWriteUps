@@ -6,8 +6,6 @@ FLAG = False
 
 req = requests.session()
 
-r = req.get(URL).text
-
 def sel_op(page):
     while not FLAG:
         eq = str(re.findall(r'<p>(.*?)</p>', page))
@@ -69,5 +67,6 @@ def math(line):
         print("200")
         return page
 
-r = req.get(URL).text
-sel_op(page=r)
+if __name__ == "__main__":
+    r = req.get(URL).text
+    sel_op(page=r)
