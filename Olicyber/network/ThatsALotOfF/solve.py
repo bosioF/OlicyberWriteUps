@@ -1,5 +1,5 @@
 from scapy.all import rdpcap, Ether
-packets = rdpcap("thatsalotofF.pcap")
+packets = rdpcap("./thatsalotofF.pcap")
 
 dest_mac_addresses = []
 for packet in packets:

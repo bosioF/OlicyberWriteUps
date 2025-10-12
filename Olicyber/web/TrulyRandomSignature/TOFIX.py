@@ -1,4 +1,5 @@
-#!/usr/bin/env python3.8
+# da fixare :(
+
 import requests
 import random, string
 import hmac, hashlib

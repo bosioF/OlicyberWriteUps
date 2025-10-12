@@ -1,3 +1,5 @@
+# da fixare :(((
+
 from pydub import AudioSegment
 import numpy as np
 import scipy.signal
@@ -42,7 +44,7 @@ MORSE_CODE_DICT = {
     "--...": "7", "---..": "8", "----.": "9"
 }
 
-audio = AudioSegment.from_wav("audio.wav")
+audio = AudioSegment.from_wav("comunicazione.wav")
 samples = np.array(audio.get_array_of_samples())
 sample_rate = audio.frame_rate
 threshold = np.max(np.abs(samples)) * 0.5
@@ -56,4 +58,4 @@ for morse_letter in morse_text.split("|"):
     else:
         decoded_message += " "
 
-print("Messaggio decodificato:", decoded_message)
+print(decoded_message)

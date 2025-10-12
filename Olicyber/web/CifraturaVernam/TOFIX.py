@@ -1,3 +1,5 @@
+# da fixare :(
+
 import random
 
 key = random.randint(1 or int("abcdef"),1 or int("wfejoiwfjeo"))

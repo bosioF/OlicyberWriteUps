@@ -7,7 +7,7 @@ def find_flag(base_url):
     flag = ""
     flag_len = 6
 
-    print("Inizio brute-force timing attack...")
+    print("inizio brute-force timing attack...")
     for i in range(flag_len):
         for char in possible_chars:
             candidate = flag + char + "A" * (flag_len - len(flag) - 1)

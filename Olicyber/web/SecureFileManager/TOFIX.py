@@ -1,3 +1,5 @@
+# da fixare :(
+
 import nc
 
 bannedwords = ['flag', 'secret', 'password', 'key']
