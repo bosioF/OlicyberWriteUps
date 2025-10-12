@@ -7,6 +7,14 @@ This repository contains writeups for challenges that you can find in [here](htt
 This repo is being updated constantly.
 If you find anything that can help you, star this repo :)
 
+## Licenza
+
+Questo progetto è rilasciato sotto licenza **CC BY-SA 4.0 International**.
+
+Puoi riutilizzare, modificare e ridistribuire questo contenuto **a patto che tu citi esplicitamente l'autore originale (`Bosio Federico (bosioF)`) e mantenga la stessa licenza (ShareAlike)**.
+
+Licenza completa: https://creativecommons.org/licenses/by-sa/4.0/
+
 ## ToDo List
 
 ### ToFix
