@@ -1,8 +1,6 @@
 import requests
 import json
 
-URL = 'http://flagdownloader.challs.olicyber.it/download/flag/'
-
 flag = []
 
 for i in range(50):
