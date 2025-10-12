@@ -1,4 +1,4 @@
-!\[logo\_olicyber](https://olicyber.it/assets/loghi/logo-olicyber.svg)
+![logo_olicyber](https://olicyber.it/assets/loghi/logo-olicyber.svg)
 
 # Olicyber WriteUps
 
