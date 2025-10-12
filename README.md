@@ -7,10 +7,10 @@ This repository contains writeups for challenges that you can find in [here](htt
 This repo is being updated constantly.
 If you find anything that can help you, star this repo :)
 
-## Licence
-This project is released under the **CC BY-SA 4.0 International** licence.
-You may reuse, modify and redistribute this content **provided that you explicitly cite the original author (`Bosio Federico (bosioF)`) and maintain the same licence (ShareAlike)**.
-Full licence: https://creativecommons.org/licenses/by-sa/4.0/
+## License
+This project is released under the **CC BY-SA 4.0 International** license.
+You may reuse, modify and redistribute this content **provided that you explicitly cite the original author (`Bosio Federico (bosioF)`) and maintain the same license (ShareAlike)**.
+Full license: https://creativecommons.org/licenses/by-sa/4.0/
 
 ## ToDo List
 
