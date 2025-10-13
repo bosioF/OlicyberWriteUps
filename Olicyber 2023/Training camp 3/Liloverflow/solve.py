@@ -10,5 +10,4 @@ j = r.sendline(payload)
 j = r.recvall()
 match = re.search(rb"flag\{[^\}]+\}", j, re.IGNORECASE)
 if match:
-    print("[!] FLAG TROVATA:")
     print(match.group(0).decode())

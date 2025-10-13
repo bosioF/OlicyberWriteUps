@@ -1,5 +1,6 @@
 import requests
 import uuid
+import json
 
 username = str(uuid.uuid4())
 
@@ -13,4 +14,4 @@ token = resp.json().get("token")
 headers = {"Authorization": f"Bearer {token}"}
 admin_resp = requests.post(admin_url, headers=headers)
 
-print(admin_resp.text)
+print(admin_resp.json()['message'])

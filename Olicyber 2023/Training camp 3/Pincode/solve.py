@@ -13,6 +13,6 @@ r = requests.post(base_url, data={
     'pincode': payload
 })
 
-ans = re.findall('flag\{.*\}', r.text)
-
-print(ans[0])
+flag = re.findall(r'flag\{.*?}', r.text)
+if flag:
+    print(flag[0])

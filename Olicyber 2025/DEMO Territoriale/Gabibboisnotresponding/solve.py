@@ -1,3 +1,5 @@
+# non sono state pubblicate queste chall, quindi non posso fixarle rn :(
+
 import requests
 
 url = 'http://gabibbo.xyz'

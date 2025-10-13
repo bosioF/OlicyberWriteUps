@@ -1,3 +1,5 @@
+# non sono state pubblicate queste chall, quindi non posso fixarle rn :(
+
 def extended_gcd(a, b):
     if b == 0:
         return a, 1, 0  # GCD, x, y
