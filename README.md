@@ -16,7 +16,6 @@ Full license: https://creativecommons.org/licenses/by-sa/4.0/
 
 ### ToFix
 #### Misc
-- BelPeaesaggio
 - SuoniMisteriosi
 
 #### Web
@@ -30,7 +29,4 @@ Full license: https://creativecommons.org/licenses/by-sa/4.0/
 
 ### ToDO
 #### Web
-- IfYouHaveNoTimeJustDontWait
-- ShellsRevenge
 - ShellsRevenge2
-- IGotMagic
