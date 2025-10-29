@@ -22,6 +22,7 @@ Full license: https://creativecommons.org/licenses/by-sa/4.0/
 - AdminsSecret
 - CifraturaVernam
 - TrulyRandomSignature
+- QuickNote
 
 #### Bin
 - Again
