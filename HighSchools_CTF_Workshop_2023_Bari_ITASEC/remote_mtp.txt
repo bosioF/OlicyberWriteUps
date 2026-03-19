@@ -1,0 +1,26 @@
+┌ Decryptions ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ 1 La vulnerabilità da patchare è presente nella libreria crypt32.dll, più precisamente è presente un bug nell'algoritmo di cifratura delle curve ellittiche...	 │
+│ 2 Una curva ellittica è una curva piana definita da un equazione del tipo: y^2 = x^3 + ax + b, se le x e le y appartengono ad un campo finito le corrispettive sa	 │
+│ 3 Il modo più diretto per rompere questo tipo di cifratura è il logaritmo discreto, quindi un metodo per niente efficiente.						 │
+│ 4 L'algoritmo implementato nella libreria chiamato ECDSA prende tre parametri: il punto base della curva G ellittica, la chiave pubblica Q e la chiave privata d	 │
+│ 5 Una chiave pubblica Q è nella forma d*G, quindi il nostro obiettivo è trovare un modo che rende Q e d*G uguali.							 │
+│ 6 La vulnerabilità in questione ITASEC{Curv3B4ll_CVE-2020-0601} permette in maniera arbitraria di settare una chiave privata e pubblica!				 │
+│																					 │
+│																					 │
+│ 																					 │
+│																					 │
+│																					 │
+│																					 │
+│																					 │
+│																					 │
+│ 																					 │
+│																					 │
+│																					 │
+│																					 │
+│ 																					 │
+│                                                                                                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+┌ Key ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│6d33343930676d6f347065676d2732343530676d303234676d3934356a68363930686b35363027686b6d6f70722c62686f7036356b6835363930686a35302b327768366b686d33343930676d6f347065676d2732│
+│343530676d303234676d3934356a68363930686b35363027686b6d6f70722c62686f7036356b6835363930686a35302b327768366b686d33343930676d6f347065676d2732343530676d3e                  │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
